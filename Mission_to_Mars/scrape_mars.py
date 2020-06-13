@@ -59,8 +59,10 @@ def scrape():
     #Website to scrape with BeautifulSoup
     facts_url = 'https://space-facts.com/mars/'
     facts_table = pd.read_html(facts_url)
-    facts_df = facts_table[0]
-    html_table = facts_df.to_html()
+    facts_df = pd.DataFrame(facts_table[0])
+    facts_df.columns = ["Description","Value"]
+    facts_df.set_index("Description", inplace=True)
+    html_table = facts_df.to_html(header=False)
     print(html_table)
 
     #Website to scrape with BeautifulSoup
@@ -82,7 +84,7 @@ def scrape():
         nested_html = browser.html
         nested_soup = bs(nested_html, 'html.parser')
         nested_results = nested_soup.find('img',class_="wide-image")
-        link = "https://astrogeology.usgs.gov/" + nested_results['src']
+        link = "https://astrogeology.usgs.gov" + nested_results['src']
         
         #Add dictionary to list
         hemisphere_image_urls.append({"title":title,"img_url":link})
@@ -98,7 +100,7 @@ def scrape():
             "html_table":html_table}
     print(final_dict)
 
-    db.mars.insert_one(final_dict)
+    browser.quit()
 
     return final_dict
 

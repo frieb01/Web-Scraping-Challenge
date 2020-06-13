@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<style>
+.main-headings {
+    font-weight: 700;
+}
+.featured-img {
+    max-width: 700px;
+}
+.hemi-imgs {
+  max-width: 500px;
+}
+.title {
+  font-weight: 600;
+}
+</style>
+
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mission to Mars Assignment</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 
 <body>
@@ -49,22 +65,22 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6">
-        <img alt="First Hemisphere" src={{mars_data.hemisphere_img_urls[0].img_url}} class="large-image">
+      <div class="col-md-6 hemi-boxes">
+        <img alt="First Hemisphere" src={{mars_data.hemisphere_img_urls[0].img_url}} class="hemi-imgs">
         <h2 class="main-headings">{{mars_data.hemisphere_img_urls[0].title}}</h2>
       </div>
-      <div class="col-md-6">
-        <img alt="Second Hemisphere" src={{mars_data.hemisphere_img_urls[1].img_url}} class="large-image">
+      <div class="col-md-6 hemi-boxes">
+        <img alt="Second Hemisphere" src={{mars_data.hemisphere_img_urls[1].img_url}} class="hemi-imgs">
         <h2 class="main-headings">{{mars_data.hemisphere_img_urls[1].title}}</h2>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6">
-        <img alt="Third Hemisphere" src={{mars_data.hemisphere_img_urls[2].img_url}} class="large-image">
+      <div class="col-md-6 hemi-boxes">
+        <img alt="Third Hemisphere" src={{mars_data.hemisphere_img_urls[2].img_url}} class="hemi-imgs">
         <h2 class="main-headings">{{mars_data.hemisphere_img_urls[2].title}}</h2>
       </div>
-      <div class="col-md-6">
-        <img alt="Fourth Hemisphere" src={{mars_data.hemisphere_img_urls[3].img_url}} class="large-image">
+      <div class="col-md-6 hemi-boxes">
+        <img alt="Fourth Hemisphere" src={{mars_data.hemisphere_img_urls[3].img_url}} class="hemi-imgs">
         <h2 class="main-headings">{{mars_data.hemisphere_img_urls[3].title}}</h2>
       </div>
     </div>
